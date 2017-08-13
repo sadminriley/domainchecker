@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import os
 import shutil
+import site
 from setuptools import setup
 
 # Domain checker setup
@@ -20,3 +21,6 @@ if not os.path.exists("/opt/domainchecker"):
     os.mkdir("/opt/domainchecker")
 
 shutil.move('badwords', '/opt/domainchecker/')
+
+# Install Site package
+shutil.move('domainchecker.py', site.getsitepackages()[0])
