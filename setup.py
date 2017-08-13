@@ -19,7 +19,4 @@ if not os.path.exists("/opt/"):
 if not os.path.exists("/opt/domainchecker"):
     os.mkdir("/opt/domainchecker")
 
-if not os.path.exists("/opt/domainchecker/badwords"):
-    os.mkdir("/opt/domainchecker/badwords")
-
-shutil.move('badwords', '/opt/domainchecker/badwords')
+shutil.move('badwords', '/opt/domainchecker/badwords/')
