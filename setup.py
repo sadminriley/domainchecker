@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import os
 import shutil
+import site
 from setuptools import setup
 
 # Domain checker setup
@@ -13,10 +14,10 @@ setup(
     license = "MIT",
 )
 # Install domainchecker files/wordslist
-if os.path.exists("/opt/"):
-    os.mkdir("/opt/domainchecker")
-    shutil.move('badwords', '/opt/domainchecker/badwords/')
-else:
-    os.mkdir("/opt/domainchecker")
-    shutil.move('badwords', '/opt/domainchecker/badwords')
+if not os.path.exists("/opt/"):
+    os.mkdir("/opt")
 
+if not os.path.exists("/opt/domainchecker"):
+    os.mkdir("/opt/domainchecker")
+
+shutil.move('badwords', '/opt/domainchecker/')
