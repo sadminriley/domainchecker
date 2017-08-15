@@ -46,6 +46,7 @@ def main():
                 elif item in line:
                     match_text = 'Match: ' + line + 'contains\n ' + item
                     matches.append(match_text)
+                    print match_text
                     match_found = True
 
     # If matches are found,send a notification via smtplib.

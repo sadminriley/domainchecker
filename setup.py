@@ -12,11 +12,11 @@ setup(
     url = "https://github.com/sadminriley/domainchecker",
     license = "MIT",
 )
-# Install domainchecker files/wordslist
-if os.path.exists("/opt/"):
-    os.mkdir("/opt/domainchecker")
-    shutil.move('badwords', '/opt/domainchecker/badwords/')
-else:
-    os.mkdir("/opt/domainchecker")
-    shutil.move('badwords', '/opt/domainchecker/badwords')
+'''
+Install domainchecker files and default wordslist. Touches a whitelist file by default.
 
+'''
+os.mkdir('/opt/domainchecker') 
+shutil.move('badwords', '/opt/domainchecker/badwords') 
+os.mknod('/opt/domainchecker/whitelist') 
+  
